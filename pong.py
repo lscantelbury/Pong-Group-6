@@ -138,18 +138,12 @@ while score_1 < 10 and score_2 < 10:
         ball.dx *= -1
 
     # collision with the paddle 1
-    if ball.xcor() == (
-                        -329 and paddle_1.ycor() +
-                         50 > ball.ycor() >
-                          paddle_1.ycor() - 50 ):
+    if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() > paddle_1.ycor() - 50 :
         ball.dx *= -1
         os.system("afplay bounce.wav&")
 
     # collision with the paddle 2
-    if ball.xcor() == ( 
-                        329 and paddle_2.ycor() +
-                         50 > ball.ycor() >
-                          paddle_2.ycor() - 50):
+    if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() > paddle_2.ycor() - 50:
         ball.dx *= -1
         os.system("afplay bounce.wav&")
 
