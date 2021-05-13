@@ -54,6 +54,11 @@ hud.write(
     font=("Press Start 2P", 24, "normal"))
 
 
+def restartgame():
+    screen = turtle.bye()
+    os.system("python3 pong.py")
+
+
 def paddle_1_up():
     y = paddle_1.ycor()
     if y < 250:
@@ -147,20 +152,24 @@ while score_1 < 10 and score_2 < 10:
         ball.dx *= -1
         os.system("mpg123 bounce.mp3")
 
-# Wipes de hud and shows/tells winner
+# Wipes de hud, shows/tells winner and restarts game
+# at will
 if score_1 > score_2:
     hud.clear()
     hud.write(
-                "Player 1 Wins!",
+                "Player 1 Wins! Restart(Space)",
                  align="center",
                   font=("Press Start 2P", 24, "normal"))
     os.system("mpg123 Player_1_Wins.mp3")
+    screen.listen()
+    screen.onkeypress(restartgame, "space")
 else:
     hud.clear()
     hud.write(
-                "Player 2 Wins!",
+                "Player 2 Wins! Restart(Space)",
                  align="center",
                   font=("Press Start 2P", 24, "normal"))
     os.system("mpg123 Player_2_Wins.mp3")
-
+    screen.listen()
+    screen.onkeypress(restartgame, "space")
 screen.mainloop()
