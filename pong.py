@@ -123,7 +123,7 @@ while score_1 < 10 and score_2 < 10:
         hud.clear()
         hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2), 
         align="center", font=("Press Start 2P", 24, "normal"))
-        os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
+        os.system("afplay 258020__kodack__arcade-bleep-sound.wav&")
         ball.goto(0, 0)
         ball.dx *= -1
 
@@ -133,7 +133,7 @@ while score_1 < 10 and score_2 < 10:
         hud.clear()
         hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2), 
         align="center", font=("Press Start 2P", 24, "normal"))
-        os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
+        os.system("afplay 258020__kodack__arcade-bleep-sound.wav&")
         ball.goto(0, 0)
         ball.dx *= -1
 
@@ -143,7 +143,7 @@ while score_1 < 10 and score_2 < 10:
                          50 > ball.ycor() >
                           paddle_1.ycor() - 50 ):
         ball.dx *= -1
-        os.system("mpg123 bounce.mp3")
+        os.system("afplay bounce.wav&")
 
     # collision with the paddle 2
     if ball.xcor() == ( 
@@ -151,7 +151,7 @@ while score_1 < 10 and score_2 < 10:
                          50 > ball.ycor() >
                           paddle_2.ycor() - 50):
         ball.dx *= -1
-        os.system("mpg123 bounce.mp3")
+        os.system("afplay bounce.wav&")
 
 # Wipes de hud and shows/tells winner
 if score_1 > score_2:
@@ -160,13 +160,13 @@ if score_1 > score_2:
                 "Player 1 Wins!",
                  align="center",
                   font=("Press Start 2P", 24, "normal"))
-    os.system("mpg123 Player_1_Wins.mp3")
+    os.system("afplay Player_1_Wins.wav&")
 else:
     hud.clear()
     hud.write(
                 "Player 2 Wins!",
                  align="center",
                   font=("Press Start 2P", 24, "normal"))
-    os.system("mpg123 Player_2_Wins.mp3")
+    os.system("afplay Player_2_Wins,wav&")
 
 screen.mainloop()
