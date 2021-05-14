@@ -79,6 +79,7 @@ def buttonclick(x, y):
 
         def restartgame():
             screen = turtle.bye()
+            os.system("mpg123 restart.mp3")
             os.system("python3 pong.py")
 
         def paddle_1_up():
