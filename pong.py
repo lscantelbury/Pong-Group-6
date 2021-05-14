@@ -87,7 +87,7 @@ def buttonclick(x, y):
         def paddle_1_up():
             y = paddle_1.ycor()
             if y < 250:
-                y += 45
+                y += 60
             else:
                 y = 250
             paddle_1.sety(y)
@@ -95,7 +95,7 @@ def buttonclick(x, y):
         def paddle_1_down():
             y = paddle_1.ycor()
             if y > -250:
-                y += -45
+                y += -60
             else:
                 y = -250
             paddle_1.sety(y)
@@ -103,7 +103,7 @@ def buttonclick(x, y):
         def paddle_2_up():
             y = paddle_2.ycor()
             if y < 250:
-                y += 45
+                y += 60
             else:
                 y = 250
             paddle_2.sety(y)
@@ -111,7 +111,7 @@ def buttonclick(x, y):
         def paddle_2_down():
             y = paddle_2.ycor()
             if y > -250:
-                y += -45
+                y += -60
             else:
                 y = -250
             paddle_2.sety(y)
