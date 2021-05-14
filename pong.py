@@ -3,7 +3,9 @@ import os
 
 # Creating menu
 menu = turtle.Screen()
+menu.bgcolor("black")
 pen1 = turtle.Turtle()
+pen1.color("white")
 pen1.hideturtle()
 
 # Writing Start Button
