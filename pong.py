@@ -23,6 +23,7 @@ pen1.write("Start", font=("Verdana", 20, "bold"))
 def buttonclick(x, y):
     # Game Beggins
     if x > -79 and x < 81 and y > -1 and y < 61:
+        os.system("mpg123 button.mp3")
         menu.clear()
         #Draw screen
         screen = turtle.Screen()
