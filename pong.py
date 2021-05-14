@@ -78,7 +78,7 @@ def buttonclick(x, y):
 
         def restartgame():
             screen = turtle.bye()
-            os.system("python3 pongmenulua.py")
+            os.system("python3 pong.py")
 
         def paddle_1_up():
             y = paddle_1.ycor()
@@ -129,7 +129,7 @@ def buttonclick(x, y):
 
             # collision with the upper wall
             if ball.ycor() > 290:
-                os.system("mpg 123 bounce.mp3")
+                os.system("mpg123 bounce.mp3")
                 ball.sety(290)
                 ball.dy *= -1
 
