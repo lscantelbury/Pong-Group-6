@@ -3,7 +3,9 @@ import os
 
 # Creating menu
 menu = turtle.Screen()
+menu.bgcolor("black")
 pen1 = turtle.Turtle()
+pen1.color("white")
 pen1.hideturtle()
 
 # Writing Start Button
@@ -21,8 +23,9 @@ pen1.goto(-35, 15)
 pen1.write("Start", font=("Verdana", 20, "bold"))
 
 def buttonclick(x, y):
-    # Game Beggins
+     # Game Beggins
     if x > -79 and x < 81 and y > -1 and y < 61:
+        os.system("mpg123 button.mp3")
         menu.clear()
         #Draw screen
         screen = turtle.Screen()
@@ -56,8 +59,8 @@ def buttonclick(x, y):
         ball.color("white")
         ball.penup()
         ball.goto(0, 0)
-        ball.dx = 0.5
-        ball.dy = 0.5
+        ball.dx = 0.25
+        ball.dy = 0.25
 
         # score
         score_1 = 0
@@ -78,7 +81,8 @@ def buttonclick(x, y):
 
         def restartgame():
             screen = turtle.bye()
-            os.system("python3 pongmenulua.py")
+            os.system("mpg123 restart.mp3")
+            os.system("python3 pong.py")
 
         def paddle_1_up():
             y = paddle_1.ycor()
@@ -129,7 +133,7 @@ def buttonclick(x, y):
 
             # collision with the upper wall
             if ball.ycor() > 290:
-                os.system("mpg 123 bounce.mp3")
+                os.system("mpg123 bounce.mp3")
                 ball.sety(290)
                 ball.dy *= -1
 
