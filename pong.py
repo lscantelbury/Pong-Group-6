@@ -152,6 +152,8 @@ def buttonclick(x, y):
                 os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
                 ball.goto(0, 0)
                 ball.dx *= -1
+                paddle_1.goto(-350,0)
+                paddle_2.goto(350,0)
 
             # collision with right wall
             if ball.xcor() > 390:
@@ -162,6 +164,8 @@ def buttonclick(x, y):
                 os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
                 ball.goto(0, 0)
                 ball.dx *= -1
+                paddle_1.goto(-350,0)
+                paddle_2.goto(350,0)
 
             # collision with the paddle 1
             if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() > paddle_1.ycor() - 50:
