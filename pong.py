@@ -56,8 +56,8 @@ def buttonclick(x, y):
         ball.color("white")
         ball.penup()
         ball.goto(0, 0)
-        ball.dx = 0.5
-        ball.dy = 0.5
+        ball.dx = 0.25
+        ball.dy = 0.25
 
         # score
         score_1 = 0
