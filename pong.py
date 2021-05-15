@@ -1,5 +1,6 @@
 import turtle
 import os
+import winsound
 
 # Creating menu
 menu = turtle.Screen()
@@ -25,7 +26,7 @@ pen1.write("Start", font=("Verdana", 20, "bold"))
 def buttonclick(x, y):
     # Game Beggins
     if x > -79 and x < 81 and y > -1 and y < 61:
-        os.system("afplay button.wav&")
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         menu.clear()
         #Draw screen
         screen = turtle.Screen()
@@ -81,7 +82,7 @@ def buttonclick(x, y):
 
         def restartgame():
             screen = turtle.bye()
-            os.system("afplay restart.wav&")
+            winsound.PlaySound("restart.wav", winsound.SND_ASYNC)
             os.system("python3 pong.py")
 
         def paddle_1_up():
@@ -135,13 +136,13 @@ def buttonclick(x, y):
 
             # collision with the upper wall
             if ball.ycor() > 290:
-                os.system("afplay bounce.wav&")
+                winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
                 ball.sety(290)
                 ball.dy *= -1
 
             # collision with lower wall
             if ball.ycor() < -290:
-                os.system("afplay bounce.wav&")
+                winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
                 ball.sety(-290)
                 ball.dy *= -1
 
@@ -151,7 +152,7 @@ def buttonclick(x, y):
                 hud.clear()
                 hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
                           align="center", font=("Press Start 2P", 24, "normal"))
-                os.system("afplay 258020__kodack__arcade-bleep-sound.wav&")
+                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav", winsound.SND_ASYNC)
                 ball.goto(0, 0)
                 ball.dx *= -1
                 paddle_1.goto(-350, 0)
@@ -163,7 +164,7 @@ def buttonclick(x, y):
                 hud.clear()
                 hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
                           align="center", font=("Press Start 2P", 24, "normal"))
-                os.system("afplay 258020__kodack__arcade-bleep-sound.wav&")
+                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav", winsound.SND_ASYNC)
                 ball.goto(0, 0)
                 ball.dx *= -1
                 paddle_1.goto(-350, 0)
@@ -172,12 +173,12 @@ def buttonclick(x, y):
             # collision with the paddle 1
             if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() > paddle_1.ycor() - 50:
                 ball.dx *= -1
-                os.system("afplay bounce.wav&")
+                winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
             # collision with the paddle 2
             if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() > paddle_2.ycor() - 50:
                 ball.dx *= -1
-                os.system("afplay bounce.wav&")
+                winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
         # Wipes de hud, shows/tells winner and restarts game
         # at will
@@ -187,7 +188,7 @@ def buttonclick(x, y):
                 "Player 1 Wins! Restart(Space)",
                 align="center",
                 font=("Press Start 2P", 24, "normal"))
-            os.system("afplay Player_1_Wins.wav&")
+            winsound.PlaySound("Player_1_Wins.wav", winsound.SND_ASYNC)
             screen.listen()
             screen.onkeypress(restartgame, "space")
         else:
@@ -196,7 +197,7 @@ def buttonclick(x, y):
                 "Player 2 Wins! Restart(Space)",
                 align="center",
                 font=("Press Start 2P", 24, "normal"))
-            os.system("afplay Player_2_Wins.wav&")
+            winsound.PlaySound("Player_2_Wins.wav", winsound.SND_ASYNC)
             screen.listen()
             screen.onkeypress(restartgame, "space")
         screen.mainloop()
