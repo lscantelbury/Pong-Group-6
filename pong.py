@@ -119,7 +119,9 @@ def buttonclick(x, y):
         # keyboard
         screen.listen()
         screen.onkeypress(paddle_1_up, "w")
+        screen.onkeypress(paddle_1_up, "W")
         screen.onkeypress(paddle_1_down, "s")
+        screen.onkeypress(paddle_1_down, "S")
         screen.onkeypress(paddle_2_up, "Up")
         screen.onkeypress(paddle_2_down, "Down")
 
