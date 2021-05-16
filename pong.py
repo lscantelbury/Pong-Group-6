@@ -10,7 +10,7 @@ pen1.color("white")
 pen1.hideturtle()
 
 # Writing Start Button
-pen1.goto(-80,0)
+pen1.goto(-80, 0)
 
 for i in range(2):
     pen1.speed(0)
@@ -150,9 +150,11 @@ def buttonclick(x, y):
             if ball.xcor() < -390:
                 score_2 += 1
                 hud.clear()
-                hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
-                          align="center", font=("Press Start 2P", 24, "normal"))
-                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav", winsound.SND_ASYNC)
+                hud.write("Player 1 | {} : {} | Player 2".format(score_1,
+                        score_2), align="center", font=("Press Start 2P",
+                        24, "normal"))
+                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav",
+                         winsound.SND_ASYNC)
                 ball.goto(0, 0)
                 ball.dx *= -1
                 paddle_1.goto(-350, 0)
@@ -162,21 +164,25 @@ def buttonclick(x, y):
             if ball.xcor() > 390:
                 score_1 += 1
                 hud.clear()
-                hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
-                          align="center", font=("Press Start 2P", 24, "normal"))
-                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav", winsound.SND_ASYNC)
+                hud.write("Player 1 | {} : {} | Player 2".format(score_1,
+                            score_2), align="center", font=("Press Start 2P",
+                            24, "normal"))
+                winsound.PlaySound("258020__kodack__arcade-bleep-sound.wav",
+                             winsound.SND_ASYNC)
                 ball.goto(0, 0)
                 ball.dx *= -1
                 paddle_1.goto(-350, 0)
                 paddle_2.goto(350, 0)
 
             # collision with the paddle 1
-            if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() > paddle_1.ycor() - 50:
+            if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() >\
+                            paddle_1.ycor() - 50:
                 ball.dx *= -1
                 winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
             # collision with the paddle 2
-            if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() > paddle_2.ycor() - 50:
+            if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() >\
+                            paddle_2.ycor() - 50:
                 ball.dx *= -1
                 winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
@@ -201,6 +207,6 @@ def buttonclick(x, y):
             screen.listen()
             screen.onkeypress(restartgame, "space")
         screen.mainloop()
-menu.onscreenclick(buttonclick,1, True)
+menu.onscreenclick(buttonclick, 1, True)
 menu.listen()
 menu.mainloop()
