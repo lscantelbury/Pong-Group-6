@@ -149,8 +149,9 @@ def buttonclick(x, y):
             if ball.xcor() < -390:
                 score_2 += 1
                 hud.clear()
-                hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
-                          align="center", font=("Press Start 2P", 24, "normal"))
+                hud.write("Player 1 | {} : {} | Player 2".format(score_1,
+                            score_2), align="center", font=("Press Start\
+                            2P", 24, "normal"))
                 os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
                 ball.goto(0, 0)
                 ball.dx *= -1
@@ -161,8 +162,9 @@ def buttonclick(x, y):
             if ball.xcor() > 390:
                 score_1 += 1
                 hud.clear()
-                hud.write("Player 1 | {} : {} | Player 2".format(score_1, score_2),
-                          align="center", font=("Press Start 2P", 24, "normal"))
+                hud.write("Player 1 | {} : {} | Player 2".format(score_1,\
+                            score_2), align="center", font=("Press Start\
+                            2P", 24, "normal"))
                 os.system("mpg123 258020__kodack__arcade-bleep-sound.mp3")
                 ball.goto(0, 0)
                 ball.dx *= -1
@@ -170,12 +172,14 @@ def buttonclick(x, y):
                 paddle_2.goto(350,0)
 
             # collision with the paddle 1
-            if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() > paddle_1.ycor() - 50:
+            if ball.xcor() == -329 and paddle_1.ycor() + 50 > ball.ycor() >\
+                            paddle_1.ycor() - 50:
                 ball.dx *= -1
                 os.system("mpg123 bounce.mp3")
 
             # collision with the paddle 2
-            if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() > paddle_2.ycor() - 50:
+            if ball.xcor() == 329 and paddle_2.ycor() + 50 > ball.ycor() >\
+                            paddle_2.ycor() - 50:
                 ball.dx *= -1
                 os.system("mpg123 bounce.mp3")
 
