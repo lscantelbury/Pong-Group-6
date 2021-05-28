@@ -175,13 +175,13 @@ def buttonclick(x, y):
 
             # collision with the paddle 1
             if ball.xcor() == -329 and paddle_1.ycor()\
-                + 50 > ball.ycor() > paddle_1.ycor() - 50:
+                + 60 > ball.ycor() > paddle_1.ycor() - 60:
                 ball.dx *= -1
                 os.system("mpg123 bounce.mp3")
 
             # collision with the paddle 2
             if ball.xcor() == 329 and paddle_2.ycor()\
-                + 50 > ball.ycor() > paddle_2.ycor() - 50:
+                + 60 > ball.ycor() > paddle_2.ycor() - 60:
                 ball.dx *= -1
                 os.system("mpg123 bounce.mp3")
 
